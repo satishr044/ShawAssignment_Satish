@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ShawInterviewExercise.Web.Models.Show>
+
+
+@{
+    ViewBag.Title = "All Shows";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+   
+}
+
+<h2>All Shows</h2>
+
+
+        @foreach (var p in Model) { 
+            <tr>
+                <td>
+                   @Html.DisplayFor(modelItem => p.Name)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => p.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = p.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = p.Id })  |
+                    @Html.ActionLink("Delete", "Delete", new { id = p.Id })
+                </td>
+            </tr>
+        }
+
+
